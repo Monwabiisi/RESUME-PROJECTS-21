@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pixel-font {
+  font-family: var(--font-pixel), "Courier New", "Monaco", "Menlo", monospace;
+  letter-spacing: 1px;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.text-shadow-lg {
+  text-shadow: 2px 2px 0px #000000;
+}
+
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+@layer utilities {
+  .text-shadow-lg {
+    text-shadow: 2px 2px 0px #000000;
+  }
+
+  .writing-mode-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+}
+
+/* Custom scrollbar for retro feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc00;
+}
+
+/* Matrix-style animations */
+@keyframes matrix-fall {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.matrix-fall {
+  animation: matrix-fall 3s linear infinite;
+}
+
+/* Dragon Animations (now used by PokemonSectionArt) */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+.animate-pulse {
+  animation: pulse 1.5s infinite;
+}
+.animate-spin {
+  animation: spin 4s linear infinite;
+}
+.animate-wiggle {
+  animation: wiggle 1s infinite;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
