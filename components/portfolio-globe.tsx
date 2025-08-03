@@ -47,7 +47,7 @@ const PokemonSectionArt = ({
 }: {
   spriteUrl: string
   altText: string
-  animationType: string
+  animationType: any // Accept any type compatible with Framer Motion
   className?: string
 }) => (
   <motion.div
